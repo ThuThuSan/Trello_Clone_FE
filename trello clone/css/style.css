@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    font-family: 'PT Serif', serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../photos/flowers-fog.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Loader */
+#loader span{
+    width: 9px;
+    height: 9px;
+    margin-left: 3px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation-name: jumpingDots;
+    animation-duration: 1.4s;
+    animation-timing-function: linear;
+    animation-timing-function: infinite ;
+}
+#loader span :nth-child(2){
+    animation-delay: 0.4s;
+}
+#loader span :nth-child(3){
+    animation-delay: 0.8s;
+}
+@keyframes jumpingDots{
+    20%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+nav {
+    height: 40px;
+    background-color: rgba(30,30,20,0.4) ;
+    padding: 4px;
+    
+}
+#center-title{
+    right: 50%;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    padding-right: 3px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.left-dropdown {
+    float: left;
+}
+button{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 8px 8px 8px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+}
+a {
+    color: white;
+}
+button:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+i {
+    transform: scale(1.2,1.2);
+}
+#search {
+    width: 150px;
+}
+.fa-search {
+    float: right;
+}
+h2 {
+    font-size: 23px;
+    padding-left: 47%;
+    color: lightgrey;
+    padding-top: 4px;
+}
+#trello-logo{
+    transform: scale(0.8,0.8);
+    color: lightgrey;
+    padding-right: 5px;
+} 
+.right-dropdown {
+    float: right;
+}
+.avatar {
+    min-height: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    line-height: 32px;
+    text-align: center;
+    background-color: #dfe1e6;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 3px;
+
+  }
+
+
+/* Team,Butler,... */
+.team {
+    margin-top: 10px;
+    width: 100%;
+}
+#team-left {
+    float: left;
+    width: 30%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+#team-right {
+    float: right;
+}
+/* Add Card */
+section {
+    margin-top: 60px;
+    display: flex;
+}
+.card{
+    width: 250px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(238, 237, 237); 
+    color: black;
+    
+}
+input {
+    margin-left: 10px;
+    font-size: 14px;
+    color: rgb(85, 84, 84);
+    font-weight: 550;
+}
+#fa-plus {
+   margin-left: 5px;
+   margin-right: 2px;
+}
+#container {
+    display: flex;
+    color: rgb(33, 10, 80);
+    align-items: flex-start;
+    /* overflow-x: scroll; */
+    overflow-y: hidden;
+    max-height: calc(100vh - 100px);
+}
+#container>div>span {
+    overflow-y: scroll;
+    max-height: 600px;
+}
+#container::-webkit-scrollbar, #container>div>span::-webkit-scrollbar {
+    display: none;
+}
+#container>div, #list-input {
+    cursor: pointer;
+    min-width: 270px;
+    max-width: 270px;
+    background-color: #ebecf0;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+#container>:last-child {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+}
+#add-list {
+    background: rgba(233, 236, 238, 0.219);
+    color: #5e6c84;
+    width: 243px;
+    margin-left: 0;
+    border-radius: 3px;
+    padding: 10px 3px 10px 3px;
+    display: inline-block;
+    transition: background-color 300ms ease-in;
+}
+#add-list:hover {
+    background: rgba(233, 236, 238, 0.5);
+}
+#listTitle {
+    min-width: 200px;
+    max-width: 200px;
+    padding: 3px 10px;
+    position: absolute;
+    visibility: hidden;
+}
+#list-input {
+    z-index: 3;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    visibility: hidden;
+    position: absolute;
+    margin-left: 0;
+    top: 0;
+    left: 0;
+    transition: all 300ms ease-in-out;
+}
+#list-input>input {
+    margin: 5px 5px 0 5px; 
+    padding: 10px;
+}
+#list-input>div {
+    margin: 10px 5px;
+}
+#list-input>div>:first-child, #card-input>div>:first-child {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #39883f;
+    transition: background-color 300ms ease-in-out;
+    margin-right: 6px;
+}
+#list-input>div>:first-child:hover, #card-input>div>:first-child:hover {
+    background-color: #529e58;
+}
+#container>div>div {
+    display: flex;
+    justify-content: space-between;
+}
+#container>div>:first-child {
+    margin: 0 7px;
+}
+#container>div>div>label {
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1 0 auto;
+    padding-top: 10px !important;
+} 
+#container>div>div>i {
+    padding: 12px 15px !important;
+}
+#container>div>div:not(:last-child) {
+    margin-bottom: 10px !important;
+}
+#card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 0 7px 10px 7px;
+    box-shadow: rgb(197, 192, 192) 0px 2px 0.1px ;
+    position: relative;
+    transition: background-color 300ms ease-in-out;
+}
+#card>div {
+    margin: 5px 8px 0 8px;
+}
+#card>:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#label {
+    width: 45px;
+    height: 8px;
+    border-radius: 4px;
+}
+#card>i{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 2px;
+    visibility: hidden;
+    transition: background-color 300ms ease-in-out;
+}
+#card>i:hover {
+    background-color: #ebecf0
+}
+#member, #userp {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ebecf0;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+}
+#card:hover {
+    background-color: rgba(255, 255, 255, 0.692);
+}
+#card:hover i {
+    visibility: visible;
+}
+#add-card{
+    position: relative;
+    padding: 0;
+}
+#add-card>a {
+    color: #5e6c84;
+    display: block;
+    padding: 3px;
+    margin: 0 7px 10px 7px;
+    border-radius: 3px;
+    transition: background-color 300ms ease-in;
+    transition: color 300ms ease-in;
+}
+#add-card>:first-child {
+    flex: 1 0 auto;
+}
+#add-card>a:hover {
+    background-color: rgba(9,30,66,.08);
+    color: #172b4d;
+}
+#card-input {
+    visibility: hidden;
+    z-index: 3; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ebecf0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 270px;  
+    transition: all 300ms ease-in-out;
+}
+#card-input>textarea {
+    width: 242px;
+    padding: 7px;
+    border-radius: 3px;
+    resize: none;
+    border-color: white;
+    margin: 0 7px 10px 7px;
+    box-shadow: rgb(197, 192, 192) 0px 2px 0.1px ;
+}
+#card-input>textarea:focus {
+    outline: none;
+}
+#card-input>div {
+    margin: 0 7px 10px 7px;
+}
+#modal {
+    visibility: hidden;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,.64);
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    transition: all 300ms ease-in-out;
+}
+#modal::-webkit-scrollbar {
+    display: none;
+}
+#modal>div {
+    margin-top: 50px;
+    width: 800px;
+    height: max-content;
+    background-color: #f4f5f7;
+    border-radius: 2px;
+    position: relative;
+    color: #5e6c84;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+}
+#card-info {
+    width: 78%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+#card-info>div {
+    display: flex;
+    margin-bottom: 20px;
+}
+#card-info>div>i {
+    padding: 10px 15px 5px 5px;
+    font-size: 16px;
+}
+#card-info>div>div {
+    flex: 1 1 auto;
+}
+
+#comment {
+    flex: 1 1 auto;
+    margin: 0  0 0 10px;
+    border: none;
+    padding: 8px 10px;
+}
+h1,h2 {
+    font-weight: 600;
+    line-height: 33px;
+    font-size: 20px;
+    color: #172b4d;
+}
+h2 {
+    font-size: 16px;
+    padding-right: 15px;
+}
+#card-info a {
+    background-color: #ebecf0;
+    border-radius: 3px;
+    padding: 5px 10px;
+    transition: background-color 300ms ease-in-out;
+}
+#card-info a:hover {
+    background: rgba(9,30,66,.08);
+}
+#parent-list {
+    text-decoration: underline;
+    padding: 0 !important;
+    background-color: transparent !important; 
+}
+#parent-list:hover{
+    background-color: transparent !important;
+}
+#mem-label-wrapper {
+    display: flex;
+    margin-top: 10px;
+}
+#card-labels>div>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    border-radius: 3px;
+    margin-right: 3px;
+    color: white;
+}
+#card-labels>div>:last-child {
+    background-color: #ebecf0;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    color: inherit;
+}
+.wrapper {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+#card-update {
+    padding-right: 20px;
+    margin-top: 70px;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+}
+#card-update>:first-child {
+    cursor: inherit;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    background-color: transparent;
+}
+#card-update>:first-child:hover {
+    background-color: transparent;
+}
+#card-update>div {
+    cursor: pointer;
+    background-color:#ebecf0;
+    margin-left: 0;
+    border-radius: 3px;
+    padding: 10px 10px;
+    margin-bottom: 8px;
+    transition: background-color 300ms ease-in-out;
+}
+#card-update>div:hover, #setting:hover {
+    background-color: rgba(9,30,66,.08);
+}
+#line {
+    background-color:#ebecf0;
+    height: 2px;
+    margin-bottom: 8px;
+}
+#setting {
+    cursor: pointer;
+    background-color: #ebecf0;
+    border-radius: 3px;
+    border-radius: 2px;
+    padding: 5px;
+}
+#modal>div>:last-child {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: background-color 300ms ease-in;
+}
+#modal>div>:last-child:hover {
+    background-color: #ebecf0;
+}
+#card-update>h3 {
+    margin-top: 10px;
+}
+

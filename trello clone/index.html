@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Trello Clone</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel = "stylesheet" href = "path/to/font-awesome/css/font-awesome.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap" rel="stylesheet">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    </head>
+    <body>
+        <nav onclick = "closeMenu();">
+            <div class="left-dropdown">
+                <button><i class="fas fa-th"></i></button>
+                <button><a href="index.html"><i class="fas fa-home"></i></a></button>
+                <button><i class="fab fa-trello"></i> Boards</button>
+                <button id="search"><i class="fas fa-search"></i></button>
+            </div>
+            <p id = "center-title"><i class="fab fa-trello"></i>&ThinSpace;Trello</p>
+            <div class="right-dropdown">
+                <button class="plusbtn"><i class="fas fa-plus"></i></button>
+                <button class="infobtn"><i class="fas fa-info-circle"></i></button>
+                <button><i class="far fa-bell"></i></button>
+                <button class="avatar"></button>
+            </div>
+        </nav>
+
+        <div class="team" onclick = "clickMenu();">
+            <div id="team-left">
+                <p>Trello Clone</p>
+                <button title="Click to star or unstar this board. Starred boards show up at the top of your boards list."><i class="far fa-star"></i></button>
+                <p>Private Team</p>
+                <button><i class="fas fa-user-friends"></i>Team Visible</button>
+                <button>Invite</button>
+            </div>
+            <div id="team-right">
+                <button><i class="fas fa-concierge-bell"></i>Butler</button>
+                <button>Show Menu</button>
+            </div>
+        </div>
+        <section id = "container" onscroll="wrapperScrolled()" onclick="closeMenu()">
+        </section>
+        <div id="modal">    
+            <div>
+                <div id="card-info"> </div>
+    
+                <div id="card-update">
+                    <div>
+                        <h3>SUGGESTED</h3>
+                        <i id="setting" class="fas fa-cog"></i>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="far fa-user"></i>
+                        &ThinSpace; <label>Join</label>
+                    </div>
+                    <a href="#" style="text-decoration: underline; display: flex; justify-content: center;">Feedback</a>
+                    <h3>ADD TO CARD</h3>
+                    <div>
+                        &ThinSpace; <i class="far fa-user"></i>
+                        &ThinSpace; <label>Members</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="fas fa-tag"></i>
+                        &ThinSpace; <label>Labels</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="far fa-check-square"></i>
+                        &ThinSpace; <label>Checklist</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="far fa-clock"></i>
+                        &ThinSpace; <label>Due Date</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="fas fa-paperclip"></i>
+                        &ThinSpace; <label>Attachment</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="fas fa-tv"></i>
+                        &ThinSpace; <label>Cover</label>
+                    </div>
+                    <h3>POWER-UPS</h3>
+                    <div>
+                        &ThinSpace; <i class="fab fa-github"></i>
+                        &ThinSpace; <label>GitHub</label>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <label>Get More Power-Ups</label>
+                    </div>
+                    <h3>ACTIONS</h3>
+                    <div>
+                        &ThinSpace; <i class="fas fa-arrow-right"></i>
+                        &ThinSpace; <label>Move</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="far fa-copy"></i>
+                        &ThinSpace; <label>Copy</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="fas fa-money-check"></i>
+                        &ThinSpace; <label>Make Template</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="far fa-eye"></i>
+                        &ThinSpace; <label>Watch</label>
+                    </div>
+                    <span id="line"></span>
+                    <div>
+                        &ThinSpace; <i class="fas fa-archive"></i>
+                        &ThinSpace; <label>Archive</label>
+                    </div>
+                    <div>
+                        &ThinSpace; <i class="fas fa-share-alt"></i>
+                        &ThinSpace; <label>Share</label>
+                    </div>
+                </div>
+                <div onclick="hideCard()" >
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div> 
+        <script src="js/script.js"></script>
+    </body>
+</html>
